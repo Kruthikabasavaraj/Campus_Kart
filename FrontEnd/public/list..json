@@ -1,0 +1,51 @@
+[
+    {
+        "id":1,
+        "name":"Study_Materials",
+        "title":"TextBooks,Guide,prep guides etc.",
+        "category":"Essentials",
+        "price":"100-500",
+        "image":"https://img.freepik.com/free-photo/stationery-desktop_23-2147711401.jpg?t=st=1715400925~exp=1715404525~hmac=183158be989d10c9052949c79a1fbcdd7134d5088f1b3a833a481500f342874c&w=900"
+
+    },
+    
+    {
+        "id":2,
+        "name":"Beddings",
+        "title":"Beds,Sheets,Blankets,pillows etc..",
+        "category":"Essentials",
+        "price":"300-1500",
+        "image":"https://img.freepik.com/free-photo/bedroom-view-with-bed-arrangement-decor_23-2150551141.jpg?t=st=1715401131~exp=1715404731~hmac=3a544155987c5c7f845b7bd684658e6eccddba48a1084582148f739961211027&w=900"
+
+    },
+    
+    {
+        "id":3,
+        "name":"Storage_Units",
+        "title":"SuitCase,Containers,etc..",
+        "category":"Essentials",
+        "price":"100-2500",
+        "image":"https://img.freepik.com/free-photo/classic-leather-suitcase-multi-colored-background-generative-ai_188544-7859.jpg?t=st=1715401236~exp=1715404836~hmac=e6607382d10f80e010a10c90f75232c0a9ad462aa1ce85a2c94b4306533999fe&w=900"
+
+    },
+    
+    {
+        "id":4,
+        "name":"Kitchen_Supplies",
+        "title":"Utensils,Microwave,Stove etc..",
+        "category":"Essentials",
+        "price":"100-5000",
+        "image":"https://img.freepik.com/free-vector/kitchen-utensils-concept-illustration_114360-20425.jpg?t=st=1715401345~exp=1715404945~hmac=cb6bc7faaa4d847af1a28b24504a7a476b93734d65ea9fc1fbd4473d3de2b84f&w=900"
+
+    },
+    
+    {
+        "id":5,
+        "name":"Electronics",
+        "title":"Laptops,Headphones,gadgets etc..",
+        "category":"Essentials",
+        "price":"3000-15000",
+        "image":"https://img.freepik.com/premium-photo/well-organised-white-office-objects-colorful-background_264197-16492.jpg?w=900"
+
+    }
+]
