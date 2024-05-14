@@ -2,9 +2,30 @@ import React from 'react'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import list from "../../public/list..json"
+import { useEffect, useState } from 'react'
+// import list from "../../public/list..json"
 import Cards from './Cards';
+import axios from "axios"
 function Categories() {
+  const [kart,setkart]=useState([])
+  useEffect(()=>{
+   const getKart = async()=>{
+    try {
+     const res = await axios.get("http://localhost:500/kart");
+    
+     const data=res.data.filter((data) => data.category === 'Essentials')
+     console.log(data);
+     setkart(data)
+    } catch (error) {
+      console.log("error",error)
+    }
+   } 
+   getKart();
+
+
+  },[])
+
+
     //arays data filter
     var settings = {
         dots: true,
@@ -40,7 +61,7 @@ function Categories() {
           }
         ]
       };
-    const filteredData = list.filter((data) => data.category === 'Essentials');
+    // const filteredData = list.filter((data) => data.category === 'Essentials');
     
     return (
     <>
@@ -55,7 +76,7 @@ function Categories() {
    
   
     <Slider {...settings}>
-        {filteredData.map((item =>(
+        {kart.map((item =>(
             //using props tp pass data from parents to child
             <Cards item={item} key={item.id}/> 
         )))}
