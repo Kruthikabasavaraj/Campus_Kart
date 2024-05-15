@@ -2,6 +2,8 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import Login from './Login'
 import { useForm } from "react-hook-form"
+import axios from "axios";
+import toast from 'react-hot-toast';
 function Signup() {
 const {
     register,
@@ -10,7 +12,28 @@ const {
     formState: { errors },
   } = useForm()
 
-  const onSubmit = (data) => console.log(data)
+  const onSubmit = async (data) => {
+    const userInfo ={
+      fullname:data.fullname,
+      email:data.email,
+      password:data.password
+
+    }
+//to store the above using api
+
+//to return promise in javascript
+try {
+  const response = await axios.post("http://localhost:500/user/signup", userInfo);
+  // alert("Signup successful");
+  toast.success("Signup successfull");
+  localStorage.setItem("Users", JSON.stringify(response.data));
+} catch (err) {
+  console.error(err);
+  // alert("Error: " + err.response.data.message);
+  toast.error("Error: " + err.response.data.message);
+}
+
+ };
   return (
     <>
     <div><div className='flex h-screen items-center justify-center'>
@@ -26,29 +49,29 @@ const {
     <input type='text' 
     placeholder='Enter your Name' 
     className='w-80 px-3 border rounded-md outline-none'
-    {...register("nameRequired", { required: true })}
+    {...register("fullname", { required: true })}
     />
 <br/>
 <br/>
-    {errors.nameRequired && <span className='text-sm text-red-500'>This field is required</span>}
+    {errors.fullname && <span className='text-sm text-red-500'>This field is required</span>}
     </div>
    <div className='mt-4 space y-4'>
     <span>Email</span><br/>
     <input type='email' placeholder='Enter your Mail' 
     className='w-80 px-3 border rounded-md outline-none'
-    {...register("emailRequired", { required: true })}
+    {...register("email", { required: true })}
     /><br/>
     <br/>
-    {errors.emailRequired && <span className='text-sm text-red-500'>This field is required</span>}
+    {errors.email && <span className='text-sm text-red-500'>This field is required</span>}
     </div> 
     <div className='mt-4 space y-4'>
     <span>Password</span><br/>
     <input type='password' placeholder='Enter password' 
     className='w-80 px-3 border rounded-md outline-none'
-    {...register("passwordRequired", { required: true })}
+    {...register("password", { required: true })}
     /><br/>
     <br/>
-    {errors.passwordRequired && <span className='text-sm text-red-500'>This field is required</span>}
+    {errors.password && <span className='text-sm text-red-500'>This field is required</span>}
 
     </div>
     <div className='flex justify-around mt-4'>

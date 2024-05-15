@@ -5,6 +5,7 @@ import { Routes,Route } from "react-router-dom"
 import BuyRent from './Buy_Rent/BuyRent'
 import Signup from './components/Signup'
 import Login from './components/Login'
+import toast, { Toaster } from 'react-hot-toast';
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
 
       
     </Routes> 
+    <Toaster/>
     </div>
    </>
   )
